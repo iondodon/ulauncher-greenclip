@@ -41,8 +41,8 @@ class KeywordQueryEventListener(EventListener):
                     items.append(
                         ExtensionResultItem(
                             icon=image_path,
-                            name=f"Image Clipboard {i + 1}",
-                            description=f"Image ID: {image_id}",
+                            name=f"{clip}",
+                            description="Image",
                             on_enter=ExtensionCustomAction(image_path),
                         )
                     )
@@ -60,8 +60,8 @@ class KeywordQueryEventListener(EventListener):
                 items.append(
                     ExtensionResultItem(
                         icon="images/logo.png",
-                        name=f"Clipboard {i + 1}",
-                        description=clip,
+                        name=f"{clip}",
+                        description="Text",
                         on_enter=ExtensionCustomAction(clip),
                     )
                 )
