@@ -14,6 +14,13 @@
       "name": "Copy",
       "description": "Copy the selected text to clipboard",
       "default_value": "copy"
+    },
+    {
+      "id":"greenclip_image_cache_directory",
+      "type":"text",
+      "name":"GreenClip Image Cache Directory",
+      "description":"The directory where images are cached",
+      "default_value":"/tmp/greenclip/"
     }
   ]
 }

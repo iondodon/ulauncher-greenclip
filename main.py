@@ -28,6 +28,7 @@ class KeywordQueryEventListener(EventListener):
         # Get clipboard history from greenclip
         clipboard_data = self.get_greenclip_data()
         pattern = r"[-+]?\d+"
+        image_directory = extension.preferences["greenclip_image_cache_directory"]
         filtered_data = [clip for clip in clipboard_data if query.lower() in clip.lower()]
         # Limit the number of items shown to 5 (or adjust as needed)
         # Limit the number of items shown to 5 (or adjust as needed)
@@ -35,7 +36,7 @@ class KeywordQueryEventListener(EventListener):
             # Check if it's an image entry in the format "image/png <id>"
             if clip.startswith("image/png"):
                 image_id = re.search(pattern, clip).group()
-                image_path = f"/tmp/greenclip/{image_id}.png"
+                image_path = f"{image_directory}{image_id}.png"
                 if os.path.exists(image_path):
                     items.append(
                         ExtensionResultItem(
